@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.gymsys.mapper.MemberMapper">
+<!--    为实现选择性更新，不在mapper文件里写，而是在xml文件里写-->
+    <update id="update">
+        update sys_member
+        <set>
+            <if test="member_id !=null">member_id = #{member_id},</if>
+            <if test="member_password !=null">member_password = #{member_password},</if>
+            <if test="member_name !=null">member_name = #{member_name},</if>
+            <if test="member_gender !=null">member_gender = #{member_gender},</if>
+            <if test="member_age !=null">member_age = #{member_age},</if>
+            <if test="member_height !=null">member_height = #{member_height},</if>
+            <if test="member_weight !=null">member_weight = #{member_weight},</if>
+            <if test="member_phone !=null">member_phone = #{member_phone},</if>
+            <if test="card_time !=null">card_time = #{card_time},</if>
+            <if test="card_class !=null">card_class = #{card_class},</if>
+            <if test="card_next_class !=null">card_next_class = #{card_next_class}</if>
+        </set>
+        <where>
+            member_id = #{member_id}
+        </where>
+    </update>
+
+</mapper>

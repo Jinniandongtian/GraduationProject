@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.lafsys.mapper.LostMapper">
+
+    <update id="giveBack">
+        update sys_lost
+        set sys_lost.is_return = 1,sys_lost.user_id = #{userId}
+        where sys_lost.lost_id = #{lostId}
+    </update>
+
+</mapper>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.lafsys.mapper.UserMapper">
+    <update id="claim" >
+        replace into sys_user_find(user_id,find_id) values (#{id}, #{findId})
+    </update>
+
+    <update id="giveBack" >
+        replace into sys_user_lost(user_id,lost_id) values (#{id}, #{lostId})
+    </update>
+
+</mapper>
